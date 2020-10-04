@@ -316,27 +316,32 @@ IE: 123456789'''
 def test_valida_numero_complemento_e_bairro():
     assert LOJA_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO.dados_loja() == TEXTO_ESPERADO_SEM_NUMERO_SEM_COMPLEMENTO_SEM_BAIRRO
 
+TEXTO_ESPERADO_TEST_EXERCICIO2_CUSTOMIZADO = '''Loja CRVG
+R. Gen. Almério de Moura, 131 Estádio
+São Januário - Rio de Janeiro - RJ
+CEP:20921-060 Tel (21) 91898-1927
+Obs 1
+CNPJ: 12.111.333/12133-12
+IE: 123.456.789.000'''
 
 def test_exercicio2_customizado():
 
-    # Defina seus próprios valores para as variáveis a seguir
-    nome_loja = ""
-    logradouro = ""
-    numero = 0
-    complemento = ""
-    bairro = ""
-    municipio = ""
-    estado = ""
-    cep = ""
-    telefone = ""
-    observacao = ""
-    cnpj = ""
-    inscricao_estadual = ""
+    nome_loja = "Loja CRVG"
+    logradouro = "R. Gen. Almério de Moura"
+    numero = 131
+    complemento = "Estádio"
+    bairro = "São Januário"
+    municipio = "Rio de Janeiro"
+    estado = "RJ"
+    cep = "20921-060"
+    telefone = "(21) 91898-1927"
+    observacao = "Obs 1"
+    cnpj = "12.111.333/12133-12"
+    inscricao_estadual = "123.456.789.000"
 
     loja_customizada = cupom.Loja(nome_loja, logradouro, numero, complemento,
                                  bairro, municipio, estado, cep, telefone,
                                  observacao, cnpj, inscricao_estadual)
 
     # E atualize o texto esperado abaixo
-    assert (loja_customizada.dados_loja() == """
-""")
+    assert (loja_customizada.dados_loja() == TEXTO_ESPERADO_TEST_EXERCICIO2_CUSTOMIZADO)
